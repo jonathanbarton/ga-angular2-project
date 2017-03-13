@@ -8,3 +8,4 @@ npm cache clean
 npm install -g angular-cli@latest
 ng set --global warnings.packageDeprecation=false
 ng set defaults.styleExt scss
+npm install -g json-server
