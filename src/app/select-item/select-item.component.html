@@ -1,0 +1,7 @@
+<ul class="select-item__selectable-item-list">
+	<li class="select-item__selectable-item" *ngFor="let item of items">
+		<input type="radio" name="radiogroup"
+			[value]="item.id" />
+		<label>{{item.name}} - 	{{item.cost}}c</label>
+	</li>
+</ul>

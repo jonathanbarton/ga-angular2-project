@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { InsertCoinComponent } from './insert-coin/insert-coin.component';
+import { SelectItemComponent } from './select-item/select-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InsertCoinComponent
+    InsertCoinComponent,
+    SelectItemComponent
   ],
   imports: [
     BrowserModule,
