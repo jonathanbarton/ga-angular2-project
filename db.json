@@ -3,17 +3,22 @@
 		{
 		  "id": 1,
 		  "name": "Sprite",
-		  "cost": 50
+		  "cost": 0.50
 		},
 		{
 		  "id": 2,
 		  "name": "Coke",
-		  "cost": 50
+		  "cost": 0.50
 		},
 		{
 		  "id": 3,
 		  "name": "Dr. Pepper",
-		  "cost": 75
+		  "cost": 0.75
+		},
+		{
+			"id": 4,
+			"name": "Mr Pibbs",
+			"cost": 0.50
 		}
 	]
 }
