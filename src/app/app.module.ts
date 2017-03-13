@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { InsertCoinComponent } from './insert-coin/insert-coin.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InsertCoinComponent
   ],
   imports: [
     BrowserModule,
