@@ -1,4 +1,4 @@
-<p class="display -sm-width">{{ coinBalance || 'INSERT COIN' }}</p>
-<button class="button -yellow" (click)='addBalance(5)'>05c</button>
-<button class="button -blue" (click)='addBalance(10)'>10c</button>
-<button class="button -green" (click)='addBalance(25)'>25c</button>
+<p class="display -sm-width">{{ coinBalance | currency:'USD':true  }}</p>
+<button class="button -yellow" (click)='addBalance(.05)'>05c</button>
+<button class="button -blue" (click)='addBalance(.10)'>10c</button>
+<button class="button -green" (click)='addBalance(.25)'>25c</button>
