@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { InsertCoinComponent } from './insert-coin/insert-coin.component';
-import { SelectItemComponent } from './select-item/select-item.component';
-import { DispenseItemComponent } from './dispense-item/dispense-item.component';
 
 import { ItemService } from './item/item.service';
 import { BalanceService } from './balance/balance.service';
@@ -14,9 +12,7 @@ import { BalanceService } from './balance/balance.service';
 @NgModule({
   declarations: [
     AppComponent,
-    InsertCoinComponent,
-    SelectItemComponent,
-    DispenseItemComponent
+    InsertCoinComponent
   ],
   imports: [
     BrowserModule,
