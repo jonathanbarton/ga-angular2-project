@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { InsertCoinService } from './insert-coin.service';
+import { BalanceService } from '../balance/balance.service';
 
 @Component({
   selector: 'app-insert-coin',
   templateUrl: './insert-coin.component.html',
   styleUrls: ['./insert-coin.component.scss'],
-  providers: [InsertCoinService]
+  providers: []
 })
 export class InsertCoinComponent implements OnInit {
   coinBalance = 0;
-  constructor(public insertCoinService: InsertCoinService) { }
+  constructor(public balanceService: BalanceService) { }
 
   ngOnInit() {
-  	this.insertCoinService.onBalanceUpdated((balance) => {
+  	this.balanceService.onBalanceUpdated((balance) => {
   	  this.coinBalance = balance;
   	});
   }
 
   addBalance(amount) {
-  	this.insertCoinService.addBalance(amount);
+  	this.balanceService.addBalance(amount);
   }
 
 }

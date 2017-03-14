@@ -5,7 +5,7 @@ import { ItemService } from '../item/item.service';
   selector: 'app-select-item',
   templateUrl: './select-item.component.html',
   styleUrls: ['./select-item.component.scss'],
-  providers: [ItemService]
+  providers: []
 })
 export class SelectItemComponent implements OnInit {
   items = [];

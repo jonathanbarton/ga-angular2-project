@@ -2,6 +2,6 @@
 	<li class="select-item__selectable-item" *ngFor="let item of items">
 		<input type="radio" name="radiogroup"
 			[value]="item.id" (change)="onSelectionChange(item)" />
-		<label>{{item.name}} - 	{{item.cost | currency:'USD':true }}</label>
+		<label>{{item.name}} - 	{{item.cost | currency:'USD':true }} - {{item.remaining}}</label>
 	</li>
 </ul>

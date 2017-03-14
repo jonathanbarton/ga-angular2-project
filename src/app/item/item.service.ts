@@ -6,7 +6,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 @Injectable()
 export class ItemService {
   private apiUrl = 'http://localhost:3000/items';
-  private selectedItem;
+  private selectedItem: any;
   constructor(private http: Http) { }
 
   get(): Observable<Response> {
@@ -14,7 +14,7 @@ export class ItemService {
     .map((res:Response) => res.json());
   }
 
-  onItemsRetrieved(callback): void {
+  onItemsRetrieved(callback: any): void {
   	this.get().subscribe(callback);
   }
 
@@ -24,5 +24,29 @@ export class ItemService {
 
   setSelectedItem(item: any): void {
   	this.selectedItem = item;
+    console.log(this.selectedItem);
+  }
+
+  put(body: any): Observable<Response> {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const updateUrl = `${this.apiUrl}/${this.selectedItem.id}`;
+    return this.http.put(updateUrl, JSON.stringify(this.selectedItem), { headers })
+    .map((res:Response) => res.json());
+  }
+
+  dispenseItem(callback: any): void {
+    this.selectedItem.remaining -= 1;
+    this.put(this.selectedItem).subscribe(callback);
+  }
+
+  hasSufficientBalance(currentBalance: number): boolean {
+    if(!this.selectedItem) return false;
+    const hasSufficientBalance = (currentBalance >= this.selectedItem.cost);
+    return hasSufficientBalance;
+  }
+
+  hasRemaining(): boolean {
+    return this.selectedItem && this.selectedItem.remaining > 0;
   }
 }
