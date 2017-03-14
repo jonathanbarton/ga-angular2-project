@@ -17,7 +17,7 @@ portion of the effort will be in determining how to create your components and i
 
 ## Setup
 
-Prerequisites: _ng-cli_
+Prerequisites: _@angular/cli_
 
 Install dependencies:
 ```
