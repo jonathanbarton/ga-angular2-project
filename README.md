@@ -1,31 +1,70 @@
-# GaAngular2Project
+Vending Machine Kata: Drinking the ngCola?
+====================
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+In this exercise you will build the brains of a vending machine.  It will accept money, maintain
+inventory, and dispense products.  All the things that you might expect a vending machine to accomplish.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The point of this kata is to provide a larger than trivial exercise that will enhance your understanding of Typescript and Angular 2.  A significant
+portion of the effort will be in determining how to create your components and interact with the provided Angular services for managing communication across components and external API calls.
 
-## Code scaffolding
+Setup
+=====
+Prerequisites: _ng-cli_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+Install dependencies:
+```
+npm install
+```
 
-## Build
+Install `json-server`:
+```
+npm install -g json-server
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Start the API Server:
+```
+npm run api
+```
+NOTE: Data for the API server is found in `db.json` in the root project folder.
 
-## Running unit tests
+Start the app:
+```
+npm start
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running end-to-end tests
+Features
+========
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Insert Coin
+-----------
 
-## Deploying to GitHub Pages
+_As a vendor_  
+_I want a vending machine that accepts coins_  
+_So that I can collect money from the customer_ 
 
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+- The vending machine will accept valid coins (nickels, dimes, and quarters). Coins represented by three buttons.
+- When a valid coin is inserted (button pressed) the amount of the coin will be added to the current balance and the machine's display will be updated.
+- When there are no coins inserted, the machine displays INSERT COIN.
 
-## Further help
+Select Item
+-----------
 
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+_As a vendor_  
+_I want customers to select items_  
+_So that I can give them an incentive to put money in the machine_
+
+- The machine shows a list of items with their price and remaining inventory. List represented as radio button group.
+- List of items is populated from item.service, which uses the external API to return an array of item objects.
+
+Dispense Item
+-------------
+_As a customer_  
+_I want to be told whether my item has been dispensed_  
+_So that I can know whether my transaction has completed_  
+
+- A button labeled 'Dispense' when pressed dispenses the selected item if there is enough current balance and the selected item has remaining stock.
+- The machine responds with "Insufficient Balance" or "No Inventory Remaining," respectively if there is an error, and cancels dispensing of item.
+- The machine responds with success message (developer's choice :) ) when item is successfully dispensed.
+- The machine deducts item cost after successfully dispensing item.
