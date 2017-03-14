@@ -3,31 +3,36 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class InsertCoinService {
+export class BalanceService {
   private balance: number = 0;
   private subject: Subject<number> = new Subject<number>();
 
   constructor() { }
   
+  private updateSubject(): void {
+    this.subject.next(this.balance);
+  }
+
   setBalance(amount): void { 
   	this.balance = amount; 
   	this.updateSubject();
   }
   
-  getBalance(): Observable<number> { 
-  	return this.subject.asObservable(); 
+  getBalance(): number { 
+  	return this.balance; 
   }
   
   addBalance(amount): void { 
   	this.balance += amount;
   	this.updateSubject(); 
   }
-  
-  updateSubject(): void {
-  	this.subject.next(this.balance);
+
+  deductBalance(amount): void {
+    this.balance -= amount;
+    this.updateSubject();
   }
 
   onBalanceUpdated(callback): void {
-  	this.getBalance().subscribe(callback);
+  	this.subject.asObservable().subscribe(callback);
   }
 }

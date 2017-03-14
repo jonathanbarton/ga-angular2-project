@@ -6,19 +6,27 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { InsertCoinComponent } from './insert-coin/insert-coin.component';
 import { SelectItemComponent } from './select-item/select-item.component';
+import { DispenseItemComponent } from './dispense-item/dispense-item.component';
+
+import { ItemService } from './item/item.service';
+import { BalanceService } from './balance/balance.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     InsertCoinComponent,
-    SelectItemComponent
+    SelectItemComponent,
+    DispenseItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ItemService,
+    BalanceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
