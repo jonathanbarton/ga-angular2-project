@@ -1,0 +1,14 @@
+
+  <li *ngFor='let item of items'>
+    <!-- <input type="radio" [value]='item.id' name='items-list' (change)='onItemSelected(item)'> -->
+    {{item.name}}
+    <!-- <h2><i>{{item.cost}}</i></h2> -->
+    <!-- <button type="button" (click)='onItemSelected(item)'>{{item.name}}</button> -->
+    <!-- <button type="button" (click)='onItemPrice(item)'>{{item.name}}</button> -->
+      <!-- <input type="button" (click)='onChangeItem(item) [value]=""> -->
+      <button type="button" (click)='onChangeItem(item)'>Dispense</button>
+  </li>
+
+
+<!-- <p>{{title}}</p>
+<input [(ngModel)]="title" type="text"> -->

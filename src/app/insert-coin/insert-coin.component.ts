@@ -11,6 +11,8 @@ export class InsertCoinComponent implements OnInit {
   coinBalance = 0;
   constructor(public balanceService: BalanceService) { }
 
+  myMassage = "Insert Coin"
+
   ngOnInit() {
   	this.balanceService.onBalanceUpdated((balance) => {
   	  this.coinBalance = balance;
@@ -19,6 +21,10 @@ export class InsertCoinComponent implements OnInit {
 
   addBalance(amount) {
   	this.balanceService.addBalance(amount);
+  }
+  returnCoins() {
+    this.balanceService.setBalance(0);
+    alert('Coins returned')
   }
 
 }
