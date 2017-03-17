@@ -22,6 +22,10 @@ export class DispenseItemComponent implements OnInit {
       this.itemService.dispenseItem(this.selectedItem);
       this.balanceService.deductBalance(this.selectedItem.cost);
       alert('You bought a ' + this.selectedItem.name +'!')
+    } else if (!this.itemService.hasSufficientBalance(this.currentBalance)) {
+      alert('You don\'t have enough money!')
+    } else if (!(this.selectedItem.remaining > 0)) {
+      alert('I\'m sorry, we\'re out of ' + this.selectedItem.name +'!')
     }
   }
 
