@@ -1,0 +1,18 @@
+<p>
+Pick a Soda
+</p>
+<ul class="select-item__selectable-item-list">
+
+
+  <li *ngFor='let item of items'>
+    <button (click)='onItemSelected(item)'>{{item.name}}</button>
+
+
+
+  </li>
+
+    <p>{{title}}</p>
+<input [(ngModel)]="title" type='text'>
+
+
+</ul>
