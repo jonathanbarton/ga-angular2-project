@@ -1,7 +1,7 @@
 <p>
   select-item works!
 </p>
-<ul *ngFor='let item of items'>
+<ul *ngFor='let item of items'> <!-- moved *ngFor up here instead of in li so each item is shown separately -->
   <li>
     {{item.name}}
   </li>
