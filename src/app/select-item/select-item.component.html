@@ -1,0 +1,13 @@
+<p>
+  select-item works!
+</p>
+<ul>
+  <li *ngFor='let item of items'>
+    <input type='radio' [value]='item.id' name='item-list' (change)='onItemSelected(item)'>
+    {{item.name}}
+    {{item.cost}}
+<!-- <button (click)='onItemSelected(item)'>{{item.name}}</button> -->
+</li>
+</ul>
+<!-- <p>{{title}}</p>
+<input [(ngModel)]="title" type='text'> -->
