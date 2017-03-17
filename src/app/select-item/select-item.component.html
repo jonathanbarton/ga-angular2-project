@@ -1,0 +1,12 @@
+<p>
+  select-item works!
+</p>
+<ul>
+  <li *ngFor='let item of items'>
+    <input type = 'radio'[value]='item.id'
+    name = 'items-list' (change)='onItemSelected(item)'>{{item.name}}
+    {{item.cost}}
+    {{item.remaining}}
+  </li>
+</ul>
+<button (click)= 'itemDispense(item)'>Dispense</button>
