@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor='let item of items'>
+    <input type='radio' [value]='item.id' name='items-list' (change)='onItemSelected(item)'>
+    {{item.name}}, ${{item.cost}},{{item.remaining}}
+  </li>
+</ul>
+<input [(ngModel)]="title" type='text'>
+<p>{{title}}</p>

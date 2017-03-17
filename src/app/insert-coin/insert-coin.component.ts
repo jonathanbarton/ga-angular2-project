@@ -21,4 +21,9 @@ export class InsertCoinComponent implements OnInit {
   	this.balanceService.addBalance(amount);
   }
 
+  returnCoins() {
+    this.balanceService.setBalance(0);
+    alert('Coins returned!');
+  }
+
 }
