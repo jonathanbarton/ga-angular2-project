@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor='let item of items'>
+    <input type="radio" name="soda" [value]='item.id' (change)='onItemSelected(item)'> {{item.name}}  ${{item.cost}}
+  </li>
+</ul>
