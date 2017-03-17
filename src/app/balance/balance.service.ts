@@ -5,26 +5,29 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class BalanceService {
   private balance: number = 0;
+  // subject is our observable
+  // kind of like an event queue-er
+  // .next puts another event in the queue
   private subject: Subject<number> = new Subject<number>();
 
   constructor() { }
-  
+
   private updateSubject(): void {
     this.subject.next(this.balance);
   }
 
-  setBalance(amount): void { 
-  	this.balance = amount; 
+  setBalance(amount): void {
+  	this.balance = amount;
   	this.updateSubject();
   }
-  
-  getBalance(): number { 
-  	return this.balance; 
+
+  getBalance(): number {
+  	return this.balance;
   }
-  
-  addBalance(amount): void { 
+
+  addBalance(amount): void {
   	this.balance += amount;
-  	this.updateSubject(); 
+  	this.updateSubject();
   }
 
   deductBalance(amount): void {
