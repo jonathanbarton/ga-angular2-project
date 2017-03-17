@@ -4,25 +4,25 @@
       "id": 1,
       "name": "Sprite",
       "cost": 0.5,
-      "remaining": 10
+      "remaining": 5
     },
     {
       "id": 2,
-      "name": "Coke",
+      "name": "Coca Cola",
       "cost": 0.5,
-      "remaining": 10
+      "remaining": 5
     },
     {
       "id": 3,
-      "name": "Dr. Pepper",
+      "name": "Dr Pepper",
       "cost": 0.75,
-      "remaining": 10
+      "remaining": 7
     },
     {
       "id": 4,
-      "name": "Mr Pibbs",
+      "name": "Mr. PiBB",
       "cost": 0.5,
-      "remaining": 10
+      "remaining": 0
     }
   ]
 }

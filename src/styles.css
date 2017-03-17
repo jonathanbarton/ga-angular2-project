@@ -38,8 +38,13 @@ h2 { color: #FFF; font-family: 'Open Sans', sans-serif; font-size: 30px; font-we
 }
 
 .button.-yellow {
-  color: #f15c5c;
+  color: black;
   background: #feee7d;
+}
+
+.button.-orange {
+  color: black;
+  background: #ffb74d;
 }
 
 .button.-blue {

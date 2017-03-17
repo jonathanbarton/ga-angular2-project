@@ -1,0 +1,4 @@
+<p *ngFor='let item of items'>
+  <!-- <button (click)='onItemSelected(item)'>{{item.name}}</button> -->
+  <input type='radio' [value]='item.id' name='items-list' (change)='onItemSelected(item)'> {{item.name}} - ${{item.cost}} - Count: {{item.remaining}}
+</p>
