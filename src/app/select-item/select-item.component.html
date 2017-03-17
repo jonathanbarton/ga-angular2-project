@@ -1,0 +1,4 @@
+<li *ngFor='let item of items'>
+  <input type='radio' [value]='item.id' name='item-list' (change)='onItemSelected(item)'>
+    {{item.name}} {{item.cost}} {{item.remaining}}
+ </li>
