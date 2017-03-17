@@ -4,19 +4,19 @@
       "id": 1,
       "name": "Sprite",
       "cost": 0.5,
-      "remaining": 10
+      "remaining": -2
     },
     {
       "id": 2,
       "name": "Coke",
       "cost": 0.5,
-      "remaining": 10
+      "remaining": 5
     },
     {
       "id": 3,
       "name": "Dr. Pepper",
       "cost": 0.75,
-      "remaining": 10
+      "remaining": 9
     },
     {
       "id": 4,
