@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from '../item/item.service';
 
 @Component({
   selector: 'app-select-item',
@@ -6,20 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-item.component.css']
 })
 export class SelectItemComponent implements OnInit {
-  items = [
-    {
-      name: 'Jonathan',
-      cost: .5
-    },
-    {
-      name: 'Max',
-      cost: .5
-    }
-  ];
+  public items;
+  constructor(public itemService: ItemService) { }
 
-  constructor() { }
-
+  // event handler instead instead of callback going into jquery it is going into code already written to be called later
   ngOnInit() {
+    this.itemService.onItemsRetrieved((items) => {
+      this.items = items;
+    })
   }
 
+  onItemSelected(item) {
+    this.itemService.setSelectedItem(item);
+  }
 }

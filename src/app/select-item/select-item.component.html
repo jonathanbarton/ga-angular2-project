@@ -1,11 +1,4 @@
-<p>
-  select-item works!
+<p *ngFor='let item of items'>
+  <!-- <button (click)='onItemSelected(item)'>{{item.name}}</button> -->
+  <input type='radio' [value]='item.id' name='items-list' (change)='onItemSelected(item)'> {{item.name}} - ${{item.cost}} - Count: {{item.remaining}}
 </p>
-<ul *ngFor='let item of items'> <!-- moved *ngFor up here instead of in li so each item is shown separately -->
-  <li>
-    {{item.name}}
-  </li>
-  <li>
-    {{item.cost}}
-  </li> <!-- iterate through list of items since number of items could change-->
-</ul>

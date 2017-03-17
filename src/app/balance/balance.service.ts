@@ -24,11 +24,13 @@ export class BalanceService {
 
   addBalance(amount): void {
   	this.balance += amount;
+    this.balance = Math.round(this.balance * 100) / 100
   	this.updateSubject();
   }
 
   deductBalance(amount): void {
     this.balance -= amount;
+    this.balance = Math.round(this.balance * 100) / 100
     this.updateSubject();
   }
 
