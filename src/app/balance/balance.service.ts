@@ -8,27 +8,29 @@ export class BalanceService {
   private subject: Subject<number> = new Subject<number>();
 
   constructor() { }
-  
+
   private updateSubject(): void {
     this.subject.next(this.balance);
   }
 
-  setBalance(amount): void { 
-  	this.balance = amount; 
+  setBalance(amount): void {
+  	this.balance = amount;
   	this.updateSubject();
   }
-  
-  getBalance(): number { 
-  	return this.balance; 
+
+  getBalance(): number {
+  	return this.balance;
   }
-  
-  addBalance(amount): void { 
+
+  addBalance(amount): void {
   	this.balance += amount;
-  	this.updateSubject(); 
+    this.balance = Math.round(this.balance * 100) / 100
+  	this.updateSubject();
   }
 
   deductBalance(amount): void {
     this.balance -= amount;
+    this.balance = Math.round(this.balance * 100) / 100
     this.updateSubject();
   }
 
