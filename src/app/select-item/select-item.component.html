@@ -1,0 +1,11 @@
+<p>
+  select-item works!
+</p>
+<ul *ngFor='let item of items'>
+  <li>
+    {{item.name}}
+  </li>
+  <li>
+    {{item.cost}}
+  </li> <!-- iterate through list of items since number of items could change-->
+</ul>
