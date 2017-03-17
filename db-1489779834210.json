@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Sprite",
       "cost": 0.5,
-      "remaining": 5
+      "remaining": 10
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Mr Pibbs",
       "cost": 0.5,
-      "remaining": 10
+      "remaining": 0
     }
   ]
 }
