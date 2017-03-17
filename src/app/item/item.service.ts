@@ -35,7 +35,7 @@ export class ItemService {
     .map((res:Response) => res.json());
   }
 
-  dispenseItem(callback: any): void {
+    dispenseItem(callback: any): void {
     this.selectedItem.remaining -= 1;
     this.put(this.selectedItem).subscribe(callback);
   }
